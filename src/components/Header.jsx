@@ -9,7 +9,7 @@ export default function Header() {
   const location = useLocation();
   const { session } = useContext(SessionContext);
 
-  // 🔥 NUOVO: apertura sidebar account
+  
   const [accountOpen, setAccountOpen] = useState(false);
 
   const signOut = async () => {
@@ -39,7 +39,7 @@ export default function Header() {
         sticky top-0 z-50
       "
       >
-        {/* LOGO */}
+        
         <Link
           to="/"
           className="
@@ -52,7 +52,7 @@ export default function Header() {
           Rehacktor
         </Link>
 
-        {/* SEARCHBAR */}
+        
         {!hideSearch && (
           <div className="flex-1 flex justify-center px-2">
             <div className="w-full max-w-xl hidden md:block">
@@ -61,11 +61,11 @@ export default function Header() {
           </div>
         )}
 
-        {/* NAV MENU */}
+        
         <nav className="flex items-center gap-6 text-gray-300 ml-auto">
           {session ? (
             <>
-              {/* ICONA ACCOUNT -> MOBILE */}
+              
               <button
                 onClick={() => setAccountOpen(true)}
                 className="text-2xl hover:text-blue-400 transition md:hidden"
@@ -73,7 +73,7 @@ export default function Header() {
                 👤
               </button>
 
-              {/* TESTO -> DESKTOP */}
+              
               <button
                 onClick={() => setAccountOpen(true)}
                 className="hidden md:block hover:text-blue-400 transition text-lg"
@@ -100,9 +100,7 @@ export default function Header() {
           )}
         </nav>
       </header>
-      {/* ------------------------------ */}
-      {/* 🔥 SIDEBAR ACCOUNT A DESTRA */}
-      {/* ------------------------------ */}
+     
       <div
         className={`
     fixed top-0 right-0 h-full w-72
@@ -112,7 +110,7 @@ export default function Header() {
     ${accountOpen ? "translate-x-0" : "translate-x-full"}
   `}
       >
-        {/* HEADER SIDEBAR */}
+        
         <div className="flex items-center gap-3 p-5 border-b border-gray-700">
           <button
             onClick={() => setAccountOpen(false)}
@@ -124,7 +122,7 @@ export default function Header() {
           <h3 className="text-lg font-semibold text-white">Menu Account</h3>
         </div>
 
-        {/* MENU */}
+        
         <ul className="p-5 space-y-4">
           <li>
             <Link

@@ -5,7 +5,6 @@ export default function Searchbar() {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [isInvalid, setIsInvalid] = useState(false);
-
   const handleSearch = (e) => {
     e.preventDefault();
     if (typeof search === "string" && search.trim().length > 0) {
@@ -16,7 +15,6 @@ export default function Searchbar() {
       setIsInvalid(true);
     }
   };
-
   return (
     <form
       onSubmit={handleSearch}
@@ -31,8 +29,7 @@ export default function Searchbar() {
         lg:max-w-xl
         group
       "
-    >
-      
+    >      
       <input
         type="text"
         value={search}
@@ -48,18 +45,13 @@ export default function Searchbar() {
           text-gray-100
           placeholder-gray-500
           border border-gray-700
-          shadow-[0_0_0_1px_rgba(0,0,0,0.3)]
-          
+          shadow-[0_0_0_1px_rgba(0,0,0,0.3)]         
           focus:border-blue-500
           focus:ring-2
           focus:ring-blue-600/40
-          focus:shadow-[0_0_12px_rgba(59,130,246,0.4)]
-          
-          transition-all duration-200
-        "
-      />
-
-      
+          focus:shadow-[0_0_12px_rgba(59,130,246,0.4)]          
+          transition-all duration-200"
+      />      
       <button
         type="submit"
         className="
@@ -75,8 +67,7 @@ export default function Searchbar() {
           text-white text-sm font-semibold
           transition-all duration-200
           shadow-[0_0_10px_rgba(59,130,246,0.35)]
-          hover:shadow-[0_0_14px_rgba(59,130,246,0.6)]
-        "
+          hover:shadow-[0_0_14px_rgba(59,130,246,0.6)]"
       >
         Cerca
       </button>
@@ -91,9 +82,8 @@ export default function Searchbar() {
           transition duration-300
 
           bg-gradient-to-r from-blue-600/20 via-blue-400/20 to-blue-600/20
-          blur-xl
-        "
-      ></div>
+          blur-xl">         
+      </div>
     </form>
   );
 }
