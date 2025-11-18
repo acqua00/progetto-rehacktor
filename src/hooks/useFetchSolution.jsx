@@ -1,0 +1,34 @@
+import { useState, useEffect, useCallback } from "react";
+
+export default function useFetchSolution(initialUrl) {
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [url, updateUrl] = useState(initialUrl);
+
+  const load = useCallback(async () => {
+    setData(null);
+    if (!url) {
+      setError("URL non valido");
+      return;
+    }
+    setLoading(true);
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(response.statusText);
+      const json = await response.json();
+      setData(json);
+      setError(null);
+    } catch (err) {
+      setError(err.message);
+      setData(null);
+    }
+    setLoading(false);
+  }, [url]);
+
+  useEffect(() => {
+    load();
+  }, [load]);
+
+  return { url, loading, error, data, load, updateUrl };
+}
