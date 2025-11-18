@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import supabase from "../supabase/supabase-client";
 import SessionContext from "../context/SessionContext";
-import RealtimeChat from "./RealTimeChat";
+import RealtimeChat from "./RealtimeChat";
 
 export default function Chatbox({ data }) {
   const { session } = useContext(SessionContext);

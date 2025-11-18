@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import useFetchSolution from "../../hooks/useFetchSolution";
-import Chatbox from "../../components/ChatBox";
+import Chatbox from "../../components/Chatbox";
 
 export default function GamePage() {
   const { id } = useParams();
