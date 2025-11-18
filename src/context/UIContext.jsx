@@ -1,27 +1,24 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 
 
-const UIContext = createContext();
+const UiContext = createContext();
 
+export function UiProvider({ children }) {
 
-export function UIProvider({ children }) {
- 
-  const [resetGenres, setResetGenres] = useState(false);
+    const [resetGenres, setResetGenres] = useState(false);
 
- 
-  const triggerGenreReset = () => {
-   
-    setResetGenres(true);
+    const triggerGenreReset = () => {
+        setResetGenres(true);
+        setTimeout(() => setResetGenres(false), 50);
+    };
 
-  
-    setTimeout(() => setResetGenres(false), 50);
-  };
-
-  return (
-    <UIContext.Provider value={{ resetGenres, triggerGenreReset }}>
-      {children}
-    </UIContext.Provider>
-  );
+    return (
+        <UiContext.Provider value={{
+            resetGenres,
+            triggerGenreReset
+        }}>
+            {children}
+        </UiContext.Provider>
+    );
 }
-
-export default UIContext;
+export default UiContext;
