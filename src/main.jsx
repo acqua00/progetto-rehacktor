@@ -5,7 +5,7 @@ import App from "./App.jsx";
 import "./global.css";
 import SessionProvider from "./context/SessionProvider";
 import { FavoritesProvider } from "./context/FavoritesProvider";
-import { UIProvider } from "./context/UiContext";
+import { UIProvider } from "./context/UiContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
