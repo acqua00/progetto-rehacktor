@@ -11,8 +11,6 @@ export default function AccountPage() {
   const [first_name, setFirstName] = useState(null);
   const [last_name, setLastName] = useState(null);
   const [avatar_url, setAvatarUrl] = useState(null);
-
-  //  FEEDBACK UI
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
